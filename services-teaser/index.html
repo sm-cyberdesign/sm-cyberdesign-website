@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SM Cyber Design Services</title>
+  <style>
+    :root{--ink:#150d12;--panel:#21151d;--paper:#f6f0f2;--mag:#e5009e;--lime:#d6f94a}
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--ink);font-family:Arial,sans-serif}
+    body{display:grid;place-items:center}
+    .stage{position:relative;width:100%;height:100%;padding:8%;display:grid;grid-template-rows:auto 1fr auto;gap:6%;background-image:linear-gradient(rgba(246,240,242,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(246,240,242,.035) 1px,transparent 1px);background-size:36px 36px;color:var(--paper)}
+    .brand{display:flex;align-items:center;gap:.7rem;color:var(--mag);font:700 clamp(.62rem,2.2vw,.86rem)/1 monospace;letter-spacing:.16em;text-transform:uppercase}
+    .brand:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--mag),transparent)}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:4%;align-content:center}
+    .card{position:relative;min-height:0;aspect-ratio:1.25;padding:9%;border:1px solid rgba(246,240,242,.14);background:rgba(33,21,29,.82);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;animation:focus 12s infinite ease-in-out}
+    .card:before,.card:after{content:"";position:absolute;width:13px;height:13px;border-color:var(--lime);opacity:.75}
+    .card:before{left:-1px;top:-1px;border-left:2px solid var(--lime);border-top:2px solid var(--lime)}
+    .card:after{right:-1px;bottom:-1px;border-right:2px solid var(--lime);border-bottom:2px solid var(--lime)}
+    .card:nth-child(2){animation-delay:3s}.card:nth-child(3){animation-delay:6s}.card:nth-child(4){animation-delay:9s}
+    .num{color:var(--lime);font:700 clamp(.9rem,4vw,1.45rem)/1 monospace}
+    h2{margin:.45rem 0 0;font-size:clamp(.7rem,3.3vw,1.14rem);line-height:1.05;letter-spacing:-.02em}
+    p{margin:.45rem 0 0;color:rgba(246,240,242,.6);font-size:clamp(.5rem,2vw,.72rem);line-height:1.35}
+    .footer{display:flex;align-items:center;justify-content:space-between;gap:.8rem;color:rgba(246,240,242,.62);font:500 clamp(.48rem,1.8vw,.66rem)/1.2 monospace;letter-spacing:.05em}
+    .pulse{display:inline-flex;align-items:center;gap:.4rem;color:var(--lime)}
+    .pulse:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime)}
+    @keyframes focus{0%,20%,100%{border-color:rgba(246,240,242,.14);transform:scale(1);box-shadow:none}6%,14%{border-color:var(--mag);transform:scale(1.035);box-shadow:0 12px 28px rgba(229,0,158,.16)}}
+    @media(prefers-reduced-motion:reduce){.card{animation:none}.card:first-child{border-color:var(--mag)}}
+  </style>
+</head>
+<body>
+  <main class="stage" aria-label="SM Cyber Design services">
+    <div class="brand">SM Cyber Design</div>
+    <div class="cards">
+      <section class="card"><div><span class="num">01</span><h2>Brand Strategy &amp;<br>Visual Identity</h2></div><p>Clear, consistent brand systems.</p></section>
+      <section class="card"><div><span class="num">02</span><h2>Secure, Accessible<br>Websites &amp; Apps</h2></div><p>Inclusive experiences shaped by security.</p></section>
+      <section class="card"><div><span class="num">03</span><h2>SEO &amp; Content<br>Optimization</h2></div><p>Stronger structure, language, and search.</p></section>
+      <section class="card"><div><span class="num">04</span><h2>Marketing<br>Strategy</h2></div><p>Focused direction for sustainable growth.</p></section>
+    </div>
+    <div class="footer"><span>Four services. One connected strategy.</span><span class="pulse">Secure by design</span></div>
+  </main>
+</body>
+</html>
