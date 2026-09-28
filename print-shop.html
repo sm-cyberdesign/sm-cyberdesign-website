@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Print Shop | SM Cyber Design</title>
+  <style>
+    :root{--ink:#21101d;--deep:#92006b;--vivid:#db00a1;--lime:#d6fb51;--paper:#fbf8fb;--line:#eadde7;--muted:#594b55}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit}
+    .container{width:min(100% - 2rem,1120px);margin:auto}
+    .top{background:white;border-bottom:1px solid var(--line)}.top .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0}
+    .logo{font-weight:800;text-decoration:none;letter-spacing:-.03em}.logo span{color:var(--vivid)}nav{display:flex;gap:1.3rem;flex-wrap:wrap}nav a{text-decoration:none;font-size:.9rem;font-weight:700}
+    .hero{background:linear-gradient(120deg,#26001d,#650048);color:white;padding:5rem 0 4rem}.eyebrow{color:var(--lime);text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:800}
+    h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.05;max-width:760px;margin:.8rem 0 1.2rem;letter-spacing:-.05em}.hero p{max-width:650px;font-size:1.1rem;color:#f2e8ef}
+    main section{padding:4.5rem 0}h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.035em;margin:0 0 .6rem}.intro{max-width:680px;color:var(--muted);margin:0 0 2rem}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:2rem;min-height:220px;display:flex;flex-direction:column;align-items:flex-start}
+    .icon{display:grid;place-items:center;background:var(--lime);border-radius:15px;width:48px;height:48px;color:var(--deep);font-weight:800;font-size:1.3rem}.card h3{font-size:1.35rem;margin:1rem 0 .25rem}.card p{color:var(--muted);margin:0}.card a{display:inline-block;margin-top:auto;padding-top:1rem;color:var(--deep);font-weight:700}
+    .details{background:#fff}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.step{padding:1.4rem;border:1px solid var(--line);border-radius:16px}.step strong{display:block;color:var(--deep);margin-bottom:.35rem}
+    .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.5rem 0 2.4rem}
+    shopify-context{display:block}.product-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:1rem;height:100%;display:flex;flex-direction:column;gap:.65rem}
+    .product-card shopify-media{display:block;width:100%;height:190px;background:#f5f0f4;border-radius:14px;overflow:hidden}
+    .product-card shopify-media img{width:100%;height:100%;object-fit:contain;display:block}.product-card h3{margin:.2rem 0;font-size:1.12rem}
+    .product-card p{margin:0;color:var(--muted)}.product-card .price{font-weight:800;color:var(--deep)}
+    .product-card shopify-variant-selector{display:block}.buy-button,.cart-toggle{border:0;border-radius:11px;background:var(--deep);color:#fff;padding:.8rem 1.1rem;font:inherit;font-weight:700;cursor:pointer}
+    .buy-button{margin-top:auto}.cart-toggle{background:var(--lime);color:var(--ink)}.shop-actions{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    shopify-cart::part(primary-button){background:var(--deep);color:#fff}
+
+    .stickers{background:#f5f0f4}.sticker-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.4rem 0}
+    .sticker-tile{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.sticker-tile img{display:block;width:100%;aspect-ratio:1;object-fit:contain;padding:1rem;background:#fff}.sticker-tile h3{font-size:1rem;margin:.8rem 1rem 1rem}
+    .sticker-cta{display:inline-block;padding:.85rem 1.2rem;border-radius:11px;background:var(--deep);color:#fff;text-decoration:none;font-weight:700}
+    @media(max-width:700px){.sticker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    footer{background:#140d13;color:white;padding:2rem 0;font-size:.85rem}
+    @media(max-width:1050px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:700px){.grid,.steps,.product-grid{grid-template-columns:1fr}.top .container{align-items:flex-start;flex-direction:column}.hero{padding:4rem 0}}
+  </style>
+  <script src="https://cdn.shopify.com/storefront/web-components.js" defer></script>
+</head>
+<body>
+  <header class="top"><div class="container"><a class="logo" href="index.html">SM <span>Cyber Design</span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Design services</a><a href="contact.html">Contact</a></nav></div></header>
+  <main>
+    <header class="hero"><div class="container"><span class="eyebrow">Print Shop</span><h1>Make your ideas tangible.</h1><p>Thoughtful designs for everyday use and memorable business moments. Explore printed apparel, stationery, drinkware, and more.</p></div></header>
+    <section aria-labelledby="collections-title"><div class="container"><div class="shop-actions"><div><h2 id="collections-title">Shop printed designs</h2><p class="intro">Choose an item and size here. Your cart stays on this page; secure payment opens in Shopify checkout.</p></div><button class="cart-toggle" type="button" onclick="document.getElementById('print-cart').showModal()">View cart</button></div>
+      <shopify-store store-domain="https://smcyberdesign.myshopify.com" country="US" language="en"></shopify-store>
+      <div class="product-grid">
+        <shopify-context type="product" handle="white-glossy-mug"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A glossy ceramic mug for everyday coffee or tea.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add mug to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/white-glossy-mug">View full details</a>
+          </article></template></shopify-context>
+        <shopify-context type="product" handle="threat-model-boxy-hoodie-for-security-engineers"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A relaxed hoodie with a threat model graphic.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add hoodie to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/threat-model-boxy-hoodie-for-security-engineers">View full details</a>
+          </article></template></shopify-context>
+        <shopify-context type="product" handle="unisex-hoodie-cybersecurity-in-mind"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A cozy hoodie with the Cybersecurity in mind design.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add hoodie to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/unisex-hoodie-cybersecurity-in-mind">View full details</a>
+          </article></template></shopify-context>
+        <shopify-context type="product" handle="tote-bag"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A roomy printed tote for everyday essentials.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add tote to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/tote-bag">View full details</a>
+          </article></template></shopify-context>
+        <shopify-context type="product" handle="unisex-hoodie"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>An all-over print recycled unisex hoodie.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add hoodie to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/unisex-hoodie">View full details</a>
+          </article></template></shopify-context>
+      </div>
+      <shopify-cart id="print-cart"></shopify-cart>
+      <h2>Print your own logo</h2><p class="intro">Tell us what you want printed. We’ll confirm the artwork and product options before your custom order is placed.</p>
+      <div class="grid">
+        <article class="card"><span class="icon" aria-hidden="true">T</span><h3>T-shirts &amp; hoodies</h3><p>Wear your brand on everyday apparel.</p><a href="contact.html?service=Custom%20apparel">Request apparel →</a></article>
+        <article class="card"><span class="icon" aria-hidden="true">◡</span><h3>Mugs &amp; cups</h3><p>Put your logo on drinkware.</p><a href="contact.html?service=Custom%20drinkware">Request drinkware →</a></article>
+        <article class="card"><span class="icon" aria-hidden="true">✦</span><h3>Caps &amp; socks</h3><p>Make your logo part of the outfit.</p><a href="contact.html?service=Custom%20accessories">Request accessories →</a></article>
+        <article class="card"><span class="icon" aria-hidden="true">▣</span><h3>Business cards, notebooks &amp; pens</h3><p>Branded essentials for meetings and events.</p><a href="contact.html?service=Custom%20stationery">Request stationery →</a></article>
+      </div>
+    </div></section>
+    <section class="stickers" id="stickers" aria-labelledby="stickers-title"><div class="container">
+      <h2 id="stickers-title">Stickers for the human side of security</h2>
+      <p class="intro">Preview the new sticker collection, from laptop stickers to a four-design sheet. Online ordering is coming soon while we finalize sizes and printing. For a custom sticker order, send us your idea.</p>
+      <div class="sticker-grid">
+        <article class="sticker-tile"><img src="sticker-assets/1h-trust-by-design.png" alt="Lime Trust by design sticker" loading="lazy"><h3>Trust by design</h3></article>
+        <article class="sticker-tile"><img src="sticker-assets/2a-human-approved.png" alt="Magenta Human-Approved sticker" loading="lazy"><h3>Human-Approved</h3></article>
+        <article class="sticker-tile"><img src="sticker-assets/1g-secure-by-default.png" alt="Secure by default terminal sticker" loading="lazy"><h3>Secure by default</h3></article>
+        <article class="sticker-tile"><img src="sticker-assets/2c-laptop-sticker-sheet.png" alt="Four-design SM Cyber Design laptop sticker sheet" loading="lazy"><h3>Laptop sticker sheet</h3></article>
+      </div>
+      <a class="sticker-cta" href="contact.html?service=Custom%20stickers">Request custom stickers →</a>
+    </div></section>
+    <section class="details" aria-labelledby="how-title"><div class="container"><h2 id="how-title">From idea to delivery</h2><div class="steps">
+      <div class="step"><strong>01 · Choose</strong>Select a ready-made design on this page, or request an item with your logo.</div>
+      <div class="step"><strong>02 · Personalize</strong>For your logo, send the artwork details so we can prepare and confirm the print file.</div>
+      <div class="step"><strong>03 · Order</strong>Review your cart here and pay securely in Shopify checkout. Shipping is shown there.</div>
+    </div></div></section>
+  </main>
+  <footer><div class="container">© <span id="year"></span> SM Cyber Design LLC</div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
