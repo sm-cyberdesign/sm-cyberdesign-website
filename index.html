@@ -205,19 +205,21 @@
     }
     @media(max-width:520px){.container,.hero .container{width:min(100% - 2rem,1120px)}section{padding:5rem 0}.process-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.service-card{padding:1.5rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.hero-animation{display:none}.hero-grid{grid-template-columns:1fr}}
-  </style>
+  
+.logo{display:flex!important;align-items:center!important;gap:.7rem!important;text-decoration:none!important;white-space:nowrap!important}.logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;overflow:hidden;flex-shrink:0}.logo-mark svg{width:100%;height:100%;display:block}.brand-lockup{display:flex;flex-direction:column;gap:.08rem;line-height:1.1}.logo .brand-name{font-family:"DM Serif Display",serif;font-size:1.25rem;font-weight:400;color:#111!important;letter-spacing:0}.logo .brand-tagline{font-family:Inter,system-ui,sans-serif;font-size:.68rem;font-style:italic;font-weight:500;color:#5f5860!important;letter-spacing:0;white-space:nowrap}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <nav aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="logo" href="index.html" aria-label="SM Cyber Design home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="124" height="124" rx="34" fill="#170e16"/><path d="M20 100 C 46 100, 40 66, 64 66 C 88 66, 82 32, 108 32" fill="none" stroke="#db00a1" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/><circle cx="108" cy="32" r="4.5" fill="#db00a1"/><circle cx="20" cy="100" r="4.5" fill="#db00a1"/><text x="64" y="76" font-family="'Fira Code', monospace" font-size="40" font-weight="700" fill="#d6fb51" text-anchor="middle" letter-spacing="-1">SM</text></svg></span><span class="brand-lockup"><span>SM Cyber Design</span><span class="brand-tagline">Design that defends. Security that empowers.</span></span></a>
+      <a class="logo" href="index.html" aria-label="SM Cyber Design home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="124" height="124" rx="34" fill="#170e16"/><path d="M20 100 C 46 100, 40 66, 64 66 C 88 66, 82 32, 108 32" fill="none" stroke="#db00a1" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/><circle cx="108" cy="32" r="4.5" fill="#db00a1"/><circle cx="20" cy="100" r="4.5" fill="#db00a1"/><text x="64" y="76" font-family="'Fira Code', monospace" font-size="40" font-weight="700" fill="#d6fb51" text-anchor="middle" letter-spacing="-1">SM</text></svg></span><span class="brand-lockup"><span class="brand-name">SM Cyber Design</span><span class="brand-tagline">Design that defends. Security that empowers.</span></span></a>
       <button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="services.html">Services</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+        
         <li><a href="blog.html">Blog</a></li>
         <li><a href="print-shop.html">Print</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -238,7 +240,6 @@
             <div class="hero-actions">
               <a class="btn btn-primary" href="services.html">See services &amp; pricing <span aria-hidden="true">→</span></a>
               <a class="btn btn-secondary" href="services.html#consultation">Request a call</a>
-              <a class="btn btn-secondary" href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">Explore the portfolio</a>
             </div>
             <div class="credential-highlight" aria-label="Professional credentials and profiles">
               <div class="credential-count"><strong>5+</strong><span>Certifications</span></div>
@@ -383,7 +384,7 @@
     </section>
   </div>
 
-  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">Portfolio</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
+  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
   <script>
     const menuButton=document.getElementById('menuButton');
     const navLinks=document.getElementById('navLinks');
@@ -416,7 +417,7 @@
         {kw:['blog','article','read more','topics'], a:"The <a href='blog.html'>blog</a> covers website security fundamentals, AI and security, and specific technical topics like template injection and incident response frameworks."},
         {kw:['ai','artificial intelligence','chatgpt','llm'], a:"AI is changing both sides of security — faster, more convincing attacks, but also faster detection and triage for defenders. See the <a href='ai-effect-on-security.html'>AI Effect on Security</a> article."},
         {kw:['gdpr','privacy','data protection','ccpa'], a:"General principle: collect only what you need, encrypt sensitive data at rest, and know exactly where customer data lives and who can access it. For a specific compliance question, that's worth a direct conversation — <a href='contact.html'>reach out</a>."},
-        {kw:['who are you','shima','about'], a:"SM Cyber Design is Shima Mudakha's studio — a UX/UI designer and cybersecurity analyst bringing a security-first perspective to design work. More on the <a href='portfolio.html'>portfolio</a>."},
+        {kw:['who are you','shima','about'], a:"SM Cyber Design is Shima Mudakha's studio — a UX/UI designer and cybersecurity analyst bringing a security-first perspective to design work. Learn more about Shima in the About section."},
         {kw:['hello','hi','hey'], a:"Hi there! Ask me about website security, accessible design, or what a project with SM Cyber Design looks like."}
       ];
       const FALLBACK = "I don't have a good answer for that one — it's worth a real conversation. <a href='contact.html'>Contact Shima directly</a>, or browse the <a href='blog.html'>blog</a> for related topics.";
