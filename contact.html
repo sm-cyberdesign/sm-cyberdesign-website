@@ -87,19 +87,21 @@
     }
     @media(max-width:520px){.container{width:min(100% - 2rem,1120px)}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.contact-form-panel{padding:1.4rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
+  
+.logo{display:flex!important;align-items:center!important;gap:.7rem!important;text-decoration:none!important;white-space:nowrap!important}.logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;overflow:hidden;flex-shrink:0}.logo-mark svg{width:100%;height:100%;display:block}.brand-lockup{display:flex;flex-direction:column;gap:.08rem;line-height:1.1}.logo .brand-name{font-family:"DM Serif Display",serif;font-size:1.25rem;font-weight:400;color:#111!important;letter-spacing:0}.logo .brand-tagline{font-family:Inter,system-ui,sans-serif;font-size:.68rem;font-style:italic;font-weight:500;color:#5f5860!important;letter-spacing:0;white-space:nowrap}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <nav aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="logo" href="index.html" aria-label="SM Cyber Design home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="124" height="124" rx="34" fill="#170e16"/><path d="M20 100 C 46 100, 40 66, 64 66 C 88 66, 82 32, 108 32" fill="none" stroke="#db00a1" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/><circle cx="108" cy="32" r="4.5" fill="#db00a1"/><circle cx="20" cy="100" r="4.5" fill="#db00a1"/><text x="64" y="76" font-family="'Fira Code', monospace" font-size="40" font-weight="700" fill="#d6fb51" text-anchor="middle" letter-spacing="-1">SM</text></svg></span><span>SM Cyber Design</span></a>
+      <a class="logo" href="index.html" aria-label="SM Cyber Design home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="124" height="124" rx="34" fill="#170e16"/><path d="M20 100 C 46 100, 40 66, 64 66 C 88 66, 82 32, 108 32" fill="none" stroke="#db00a1" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/><circle cx="108" cy="32" r="4.5" fill="#db00a1"/><circle cx="20" cy="100" r="4.5" fill="#db00a1"/><text x="64" y="76" font-family="'Fira Code', monospace" font-size="40" font-weight="700" fill="#d6fb51" text-anchor="middle" letter-spacing="-1">SM</text></svg></span><span class="brand-lockup"><span class="brand-name">SM Cyber Design</span><span class="brand-tagline">Design that defends. Security that empowers.</span></span></a>
       <button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="services.html">Services</a></li>
         <li><a href="index.html#process">Process</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+        
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
@@ -160,15 +162,14 @@
           </aside>
           <aside class="contact-card" aria-label="Other ways to connect">
             <strong>Prefer another way?</strong>
-            <p>Find recent work and background on the portfolio, or connect on LinkedIn.</p>
-            <a href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">View portfolio →</a>
+            <p>Connect with SM Cyber Design on LinkedIn for updates and recent work.</p>
           </aside>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">Portfolio</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
+  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
 
   <script>
     const menuButton=document.getElementById('menuButton');
