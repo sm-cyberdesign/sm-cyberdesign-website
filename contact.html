@@ -197,7 +197,7 @@
       let msg = "I'd like a quote for the following package:\n" + list.map(s => '- ' + s).join('\n');
       if (low && high && (Number(low) || Number(high))) msg += '\n\nEstimated range: $' + Number(low).toLocaleString('en-US') + '–$' + Number(high).toLocaleString('en-US');
       if (params.get('custom') === 'yes') msg += '\nCustom quoted items are additional; final pricing to be confirmed.';
-      if (params.get('promo') === 'WELCOME50') msg += '\n\nSubscriber promotion code: WELCOME50 (50% first project service fee). Please verify subscription and first-time eligibility before invoicing.';
+      if (params.get('promo') === 'WELCOME10') msg += '\n\nSubscriber promotion code: WELCOME10 (10% first project service fee). Please verify subscription and first-time eligibility before invoicing.';
       msg += '\n\nPlease send a secure invoice after confirming the final scope and price.';
       msg += '\n\nA bit about my business: ';
       document.getElementById('fMsg').value = msg;
