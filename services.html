@@ -282,18 +282,18 @@
             <input id="promoCode" type="text" autocomplete="off" placeholder="Enter your code">
             <p id="promoStatus" role="status" aria-live="polite">Subscribe below to receive a code.</p>
           </div>
-          <div class="promo-discount" id="promoDiscount"><span>First project offer (50%)</span><span id="discountAmount"></span></div>
+          <div class="promo-discount" id="promoDiscount"><span>First project offer (10%)</span><span id="discountAmount"></span></div>
           <div class="quote-total">
             <span>Estimated total</span>
             <strong id="quoteTotal">$0</strong>
           </div>
           <a class="btn btn-primary" id="quoteCta" href="contact.html">Get my quote <span aria-hidden="true">→</span></a>
-          <p class="quote-note">These are USD project estimates for the listed scope. Printing, domains, hosting, and ad spend are separate. I’ll confirm the final amount before invoicing. The 50% first-project offer requires subscriber and first-time eligibility verification.</p>
+          <p class="quote-note">These are USD project estimates for the listed scope. Printing, domains, hosting, and ad spend are separate. I’ll confirm the final amount before invoicing. The 10% first-project offer requires subscriber and first-time eligibility verification.</p>
         </aside>
         <div class="promo-box" id="subscriber-offer">
           <p class="eyebrow">New subscriber offer</p>
-          <h2 id="promo-title">50% off your first project</h2>
-          <p>Subscribe to email updates to get your welcome code. After subscribing, enter WELCOME50 in Your package above to activate the 50% estimate. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
+          <h2 id="promo-title">10% off your first project</h2>
+          <p>Subscribe to email updates to get your welcome code. After subscribing, enter WELCOME10 in Your package above to activate the 10% estimate. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
           <form id="promoForm" class="promo-form" action="https://formspree.io/f/mqpadglg" method="POST">
             <input type="hidden" name="_subject" value="New subscriber — SM Cyber Design first-project offer">
             <input type="hidden" name="signup_type" value="Email updates and first-project offer">
@@ -382,7 +382,7 @@
     const promoDiscount = document.getElementById('promoDiscount');
     const discountAmount = document.getElementById('discountAmount');
     const fmt = n => '$' + n.toLocaleString('en-US');
-    const offerCode = 'WELCOME50';
+    const offerCode = 'WELCOME10';
 
     function updateQuote() {
       const selected = toggles.filter(t => t.checked);
@@ -415,8 +415,8 @@
         li.append(nameSpan, priceSpan);
         quoteItems.appendChild(li);
       });
-      const discountLow = validCode ? low / 2 : 0;
-      const discountHigh = validCode ? high / 2 : 0;
+      const discountLow = validCode ? low * 0.10 : 0;
+      const discountHigh = validCode ? high * 0.10 : 0;
       discountAmount.textContent = low ? '−' + fmt(discountLow) + '–' + fmt(discountHigh) : '';
       const total = low ? fmt(low - discountLow) + '–' + fmt(high - discountHigh) : 'Custom quote';
       quoteTotal.textContent = hasCustom && low ? total + ' + custom quote' : total;
@@ -442,7 +442,7 @@
           method: 'POST', body: new FormData(promoForm), headers: { Accept: 'application/json' }
         });
         if (!response.ok) throw new Error('Subscription request failed');
-        promoResult.textContent = 'Thank you for subscribing! Your welcome code is ' + offerCode + '. Enter it in Your package above to activate 50% off your first project estimate.';
+        promoResult.textContent = 'Thank you for subscribing! Your welcome code is ' + offerCode + '. Enter it in Your package above to activate 10% off your first project estimate.';
         promoResult.hidden = false;
         promoForm.reset();
       } catch (error) {
