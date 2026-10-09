@@ -145,6 +145,18 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   
 .logo{display:flex!important;align-items:center!important;gap:.7rem!important;text-decoration:none!important;white-space:nowrap!important}.logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;overflow:hidden;flex-shrink:0}.logo-mark svg{width:100%;height:100%;display:block}.brand-lockup{display:flex;flex-direction:column;gap:.08rem;line-height:1.1}.logo .brand-name{font-family:"DM Serif Display",serif;font-size:1.25rem;font-weight:400;color:#111!important;letter-spacing:0}.logo .brand-tagline{font-family:Inter,system-ui,sans-serif;font-size:.68rem;font-style:italic;font-weight:500;color:#5f5860!important;letter-spacing:0;white-space:nowrap}
+
+    .ai-workflow{padding:5rem 0;background:var(--paper)}
+    .ai-workflow h2{max-width:900px;margin-bottom:1.25rem}
+    .ai-intro{max-width:860px;color:var(--muted)}
+    .ai-intro p+p{margin-top:1rem}
+    .ai-example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+    .ai-example{background:white;border:1px solid var(--line);border-radius:20px;padding:1.5rem}
+    .ai-example h3{font-size:1.4rem;margin-bottom:.75rem}
+    .ai-example p{font-size:.92rem;color:var(--muted)}
+    .ai-project-link{margin-top:1.5rem}
+    @media(max-width:800px){.ai-example-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -305,6 +317,24 @@
         </div>
 
         </div>
+      </div>
+    </section>
+
+
+    <section class="ai-workflow" id="ai-workflow" aria-labelledby="ai-workflow-title">
+      <div class="container">
+        <p class="eyebrow">How I Use AI</p>
+        <h2 id="ai-workflow-title">AI-Assisted Design &amp; Development</h2>
+        <div class="ai-intro">
+          <p>At SM Cyber Design, I combine generative AI with UX design, cybersecurity awareness, and marketing insight to support website development, application prototyping, content development, and workflow improvement.</p>
+          <p>I use AI to organize research and explore solutions, then review and refine the results around each project's business goals, accessibility needs, and user experience.</p>
+        </div>
+        <div class="ai-example-grid">
+          <article class="ai-example"><h3>Research &amp; Content</h3><p>Research synthesis and AI-assisted content development help clarify information, explore messaging, and organize a project's direction.</p></article>
+          <article class="ai-example"><h3>Design &amp; Prototyping</h3><p>Rapid prototyping and AI-assisted development support exploration of website layouts, application flows, and interface concepts.</p></article>
+          <article class="ai-example"><h3>Human Review &amp; Validation</h3><p>I review and refine AI-generated work for accuracy, usability, accessibility needs, and alignment with the project requirements.</p></article>
+        </div>
+        <a class="btn btn-secondary ai-project-link" href="https://shimamudakha.design/#applied-ai">Explore my applied AI projects <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
