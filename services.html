@@ -60,26 +60,11 @@
     .pg-hero h1{font-size:clamp(2rem,3.5vw,3rem);max-width:none}
     .hero-intro{color:var(--muted);font-size:1rem;margin:.65rem 0 1rem;max-width:780px}
     .hero-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem}
-    .service-overview{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem}
-    .service-overview li{min-width:0}
-    .service-shortcut{display:flex;flex-direction:column;gap:.3rem;height:100%;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:white;text-decoration:none;transition:border-color .2s,box-shadow .2s}
-    .service-shortcut:hover{border-color:var(--vivid);box-shadow:0 4px 16px rgba(146,0,107,.08)}
-    .service-shortcut strong{font-size:.95rem;line-height:1.25}
-    .service-shortcut .service-scope{font-size:.78rem;color:var(--muted);line-height:1.4}
-    .service-shortcut .service-range{margin-top:auto;padding-top:.25rem;font-size:.86rem;font-weight:700;color:var(--deep)}
-    .overview-note{font-size:.78rem;line-height:1.4;color:var(--muted);margin-top:.65rem}
-    @media(max-width:900px){.service-overview{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:520px){
-      .pg-hero{padding:1.1rem 0 1.5rem}
+      .pg-hero{padding:1.1rem 0 1rem}
       .pg-hero h1{font-size:1.85rem}
       .hero-intro{font-size:.9rem;line-height:1.45;margin:.5rem 0 .8rem}
-      .hero-actions{gap:.5rem;margin-bottom:.8rem}
       .hero-actions .btn{font-size:.82rem;min-height:44px;padding:.55rem .8rem}
-      .service-overview{gap:.5rem}
-      .service-shortcut{padding:.65rem .7rem;gap:.2rem}
-      .service-shortcut strong{font-size:.86rem}
-      .service-shortcut .service-scope{font-size:.72rem;line-height:1.3}
-      .service-shortcut .service-range{font-size:.8rem;padding-top:.15rem}
     }
 
     .quote-layout{display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:start;padding-bottom:6rem}
@@ -181,6 +166,34 @@
     .ai-project-link{margin-top:1.5rem}
     @media(max-width:800px){.ai-example-grid{grid-template-columns:1fr}}
 
+    /* One service list: compact choices with optional scope details. */
+    .pg-hero{padding:1.5rem 0 1rem}
+    .hero-actions{margin-bottom:0}
+    .quote-layout{gap:1.25rem}
+    .package-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+    .package-card{display:flex;flex-direction:column;gap:.5rem;padding:1rem;border-radius:16px;min-width:0}
+    .pkg-num{display:none}
+    .pkg-body{width:100%}
+    .pkg-body h3{font-family:"DM Sans",sans-serif;font-size:1rem;font-weight:700;line-height:1.25;margin-bottom:.3rem}
+    .pkg-body .pkg-scope{font-size:.8rem;line-height:1.4}
+    .pkg-details{margin-top:.4rem}
+    .pkg-details summary{cursor:pointer;color:var(--deep);font-size:.76rem;font-weight:600;min-height:24px}
+    .pkg-details[open] summary{margin-bottom:.5rem}
+    .pkg-side{width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:.5rem;margin-top:auto;text-align:left}
+    .pkg-price{font-size:.85rem}
+    .pkg-toggle-label{font-size:.76rem}
+    .quote-sidebar{min-width:0}
+    @media(max-width:900px){.quote-sidebar{order:0}}
+    @media(max-width:520px){
+      .pg-hero{padding:1rem 0}
+      .package-list{grid-template-columns:1fr;gap:.5rem}
+      .package-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.5rem;padding:.75rem}
+      .pkg-body h3{font-size:.9rem}
+      .pkg-body .pkg-scope{font-size:.75rem}
+      .pkg-side{grid-column:auto;flex-direction:column;align-items:flex-end;justify-content:flex-start;margin:0;width:auto;gap:.5rem}
+      .pkg-price{font-size:.78rem}
+      .pkg-toggle-label{font-size:.72rem}
+    }
 </style>
 </head>
 <body>
@@ -207,21 +220,10 @@
       <div class="container">
         <p class="eyebrow">Services &amp; pricing</p>
         <h1>Design services. <span class="accent">Clear prices.</span></h1>
-        <p class="hero-intro">Branding, websites, apps, SEO, and marketing for your business. Choose a service to see what’s included.</p>
+        <p class="hero-intro">Branding, websites, apps, SEO, and marketing. Select services to build your estimate; expand details to see what’s included.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#packageForm">Build my quote <span aria-hidden="true">→</span></a>
           <a class="btn btn-secondary" href="#consultation">Request a free 20-min call</a>
         </div>
-        <ul class="service-overview" aria-label="Services and estimated project prices">
-          <li><a class="service-shortcut" href="#service-brand"><strong>Brand &amp; identity</strong><span class="service-scope">Visual system &amp; style guide</span><span class="service-range">$600–$1,000 <span aria-hidden="true">↗</span></span></a></li>
-          <li><a class="service-shortcut" href="#service-website"><strong>Website design</strong><span class="service-scope">Secure, accessible, up to 5 pages</span><span class="service-range">$1,400–$2,400 <span aria-hidden="true">↗</span></span></a></li>
-          <li><a class="service-shortcut" href="#service-seo"><strong>SEO &amp; content</strong><span class="service-scope">On-page improvements, up to 5 pages</span><span class="service-range">$350–$650 <span aria-hidden="true">↗</span></span></a></li>
-          <li><a class="service-shortcut" href="#service-marketing"><strong>Marketing strategy</strong><span class="service-scope">60-day digital marketing plan</span><span class="service-range">$450–$800 <span aria-hidden="true">↗</span></span></a></li>
-          <li><a class="service-shortcut" href="#service-logo"><strong>Logo design</strong><span class="service-scope">2 concepts &amp; 2 refinement rounds</span><span class="service-range">$250–$450 <span aria-hidden="true">↗</span></span></a></li>
-          <li><a class="service-shortcut" href="#service-business-card"><strong>Business cards</strong><span class="service-scope">Front &amp; back, print-ready files</span><span class="service-range">$120–$200 <span aria-hidden="true">↗</span></span></a></li>
-          <li><a class="service-shortcut" href="#service-application"><strong>Application UX/UI</strong><span class="service-scope">Up to 5 screens &amp; prototype</span><span class="service-range">$900–$1,600 <span aria-hidden="true">↗</span></span></a></li>
-        </ul>
-        <p class="overview-note">USD project estimates. Final pricing confirmed before invoicing. App development and printing are quoted separately.</p>
       </div>
     </header>
 
@@ -233,8 +235,11 @@
             <span class="pkg-num">01</span>
             <div class="pkg-body">
               <h3>Brand Strategy &amp; Visual Identity</h3>
+              <p class="pkg-scope">Visual system &amp; style guide</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A focused visual system for a business with an existing logo, so every customer touchpoint feels consistent.</p>
               <ul><li>Brand direction</li><li>Color &amp; typography</li><li>Core messaging</li><li>Mini style guide</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$600–$1,000</span>
@@ -246,8 +251,11 @@
             <span class="pkg-num">02</span>
             <div class="pkg-body">
               <h3>Secure, Accessible Website</h3>
+              <p class="pkg-scope">Secure, accessible, up to 5 pages</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A responsive site (up to 5 pages) that's easy to navigate, inclusive by design, and built with a security-first mindset.</p>
               <ul><li>UX/UI design</li><li>Responsive build</li><li>Accessibility pass</li><li>Basic security hardening</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$1,400–$2,400</span>
@@ -259,8 +267,11 @@
             <span class="pkg-num">03</span>
             <div class="pkg-body">
               <h3>SEO &amp; Content Optimization</h3>
+              <p class="pkg-scope">On-page improvements, up to 5 pages</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A focused on-page review and improvements for up to 5 pages, so visitors and search engines can understand your business.</p>
               <ul><li>Keyword direction</li><li>Page structure</li><li>On-page SEO</li><li>Content clarity pass</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$350–$650</span>
@@ -272,8 +283,11 @@
             <span class="pkg-num">04</span>
             <div class="pkg-body">
               <h3>Marketing Strategy</h3>
+              <p class="pkg-scope">60-day digital marketing plan</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A focused 60-day digital plan with clear audiences, useful content, and channels that support sustainable visibility.</p>
               <ul><li>Audience strategy</li><li>Campaign direction</li><li>Content plan</li><li>Customer journey map</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$450–$800</span>
@@ -285,8 +299,11 @@
             <span class="pkg-num">05</span>
             <div class="pkg-body">
               <h3>Logo Design</h3>
+              <p class="pkg-scope">2 concepts &amp; 2 refinement rounds</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A distinctive logo tailored to your business, with 2 initial concepts and 2 refinement rounds.</p>
               <ul><li>2 initial concepts</li><li>2 refinement rounds</li><li>Digital &amp; print files</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$250–$450</span>
@@ -298,8 +315,11 @@
             <span class="pkg-num">06</span>
             <div class="pkg-body">
               <h3>Business Card Design</h3>
+              <p class="pkg-scope">Front &amp; back, print-ready files</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A front and back business card using your existing logo and contact details, with 2 refinement rounds.</p>
               <ul><li>Front and back layout</li><li>2 refinement rounds</li><li>Print-ready PDF</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$120–$200</span>
@@ -311,8 +331,11 @@
             <span class="pkg-num">07</span>
             <div class="pkg-body">
               <h3>Application Design</h3>
+              <p class="pkg-scope">Up to 5 screens &amp; prototype</p>
+              <details class="pkg-details"><summary>What’s included</summary>
               <p>A focused UX/UI concept for a mobile or web application, up to 5 key screens. Design and prototype only; development is quoted separately.</p>
               <ul><li>User flow</li><li>Up to 5 screen designs</li><li>Clickable prototype</li><li>Developer handoff</li></ul>
+              </details>
             </div>
             <div class="pkg-side">
               <span class="pkg-price">$900–$1,600</span>
