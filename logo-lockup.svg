@@ -5,7 +5,7 @@
   <circle cx="84" cy="24" r="3.5" fill="#db00a1"/>
   <circle cx="16" cy="78" r="3.5" fill="#db00a1"/>
   <text x="50" y="60" font-family="'Fira Code', monospace" font-size="31" font-weight="700"
-        fill="#d6fb51" text-anchor="middle" letter-spacing="-1">SM</text>
+        fill="#b9b8c0" text-anchor="middle" letter-spacing="-1">SM</text>
 
   <text x="122" y="52" font-family="'DM Serif Display', serif" font-size="30" fill="#170e16">SM <tspan fill="#db00a1">Cyber</tspan></text>
   <text x="122" y="84" font-family="'DM Serif Display', serif" font-size="30" fill="#170e16">Design</text>
