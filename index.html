@@ -220,7 +220,25 @@
     @media(max-width:800px){.ai-example-grid{grid-template-columns:1fr}}
 
 </style>
-  <link rel="stylesheet" href="studio.css?v=20261010-gray">
+  <link rel="stylesheet" href="studio.css?v=20261011-interactions">
+<style>
+/* Small, purposeful interactions using the existing signature colors. */
+.interactive-studio .studio-hint{font-size:.9rem;line-height:1.6;margin:.6rem 0 1rem}
+.studio-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.studio-choices button{font:inherit;font-size:.88rem;min-height:44px;padding:.6rem .7rem;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;transition:color .18s,border-color .18s,background-color .18s}
+.studio-choices button:hover{color:var(--text);border-color:var(--brand-green)}
+.studio-choices button[aria-pressed="true"]{color:var(--brand-green);border-color:var(--brand-green);background:rgba(214,251,81,.045);box-shadow:inset 0 -2px var(--brand-green)}
+.studio-preview{margin-top:1.2rem;padding:1rem 0 0;border-top:1px solid var(--line);min-height:182px}
+.studio-preview-label{font-family:"Fira Code",monospace;font-size:.8025rem;color:var(--muted)}
+.studio-preview h3{font-size:1.45rem;line-height:1.25;margin:.6rem 0}
+.interactive-studio .studio-preview p{font-size:.92rem;line-height:1.65;margin:.5rem 0;color:var(--muted)}
+.studio-preview-link{display:inline-flex;align-items:center;justify-content:space-between;gap:1rem;min-height:44px;width:100%;font-size:.9rem;color:var(--brand-green);text-underline-offset:4px}
+.studio-preview-link span,.service-action span,.hero-actions .btn span{display:inline-block;transition:transform .2s}
+.studio-preview-link:hover span,.studio-preview-link:focus-visible span,.service-link:hover .service-action span,.service-link:focus-visible .service-action span,.hero-actions .btn:hover span{transform:translateX(3px)}
+.service-link:focus-visible .service-card{border-color:var(--brand-green)}
+@media(max-width:800px){.studio-panel.interactive-studio{display:block;padding:1.25rem}.interactive-studio h2{font-size:1.85rem}.studio-preview{min-height:166px}.interactive-studio .studio-panel-top{font-size:.68rem}}
+@media(prefers-reduced-motion:reduce){.studio-preview-link span,.service-action span,.hero-actions .btn span{transform:none!important}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -262,16 +280,22 @@
               </div>
             </div>
           </div>
-          <aside class="studio-panel" aria-label="Our approach">
-            <div class="studio-panel-top"><span>SM / Independent studio</span><span>Atlanta · Working remotely</span></div>
-            <h2>Make your expertise<br><em>easy to understand.</em></h2>
-            <ol class="studio-route">
-              <li><span>01 / STRATEGY</span>A clear direction</li>
-              <li><span>02 / DESIGN</span>People come first</li>
-              <li><span>03 / BUILD</span>Thoughtful foundations</li>
-              <li><span>04 / REVIEW</span>Care in the details</li>
-            </ol>
-            <div class="studio-panel-bottom">Branding, UX, and security awareness, connected.</div>
+          <aside class="studio-panel interactive-studio" aria-labelledby="studio-title">
+            <div class="studio-panel-top"><span>SM / Independent studio</span><span>Explore your next step</span></div>
+            <h2 id="studio-title">Small details.<br><em>Meaningful interaction.</em></h2>
+            <p class="studio-hint">Choose a focus to see how I can help.</p>
+            <div class="studio-choices" role="group" aria-label="Choose your project focus">
+              <button type="button" data-studio-focus="brand" aria-pressed="false" aria-controls="studio-preview">Brand</button>
+              <button type="button" data-studio-focus="website" aria-pressed="true" aria-controls="studio-preview">Website</button>
+              <button type="button" data-studio-focus="seo" aria-pressed="false" aria-controls="studio-preview">Visibility</button>
+              <button type="button" data-studio-focus="marketing" aria-pressed="false" aria-controls="studio-preview">Marketing</button>
+            </div>
+            <div id="studio-preview" class="studio-preview" aria-live="polite" aria-atomic="true">
+              <span class="studio-preview-label">02 / WEB DESIGN</span>
+              <h3>A clearer path to action.</h3>
+              <p>Accessible layouts, intuitive navigation, and security-aware choices that help visitors take the next step.</p>
+            </div>
+            <a class="studio-preview-link" href="services.html#service-website">Explore website design <span aria-hidden="true">→</span></a>
           </aside>
         </div>
         <div class="trust-row" aria-label="SM Cyber Design principles">
@@ -489,6 +513,61 @@
       });
     })();
   </script>
+<script>
+(function(){
+  const panel=document.querySelector('.interactive-studio');
+  if(!panel) return;
+  const choices=Array.from(panel.querySelectorAll('[data-studio-focus]'));
+  const preview=panel.querySelector('.studio-preview');
+  const label=preview.querySelector('.studio-preview-label');
+  const title=preview.querySelector('h3');
+  const description=preview.querySelector('p');
+  const link=panel.querySelector('.studio-preview-link');
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const data={
+    brand:['01 / BRAND STRATEGY','A brand that feels like you.','Clear messaging, a distinctive visual identity, and reusable design elements that keep your business consistent.','Explore brand strategy','services.html#service-brand'],
+    website:['02 / WEB DESIGN','A clearer path to action.','Accessible layouts, intuitive navigation, and security-aware choices that help visitors take the next step.','Explore website design','services.html#service-website'],
+    seo:['03 / SEARCH VISIBILITY','Make your expertise easier to find.','Thoughtful keywords, clear page structure, and useful content that help the right audience discover your business.','Explore SEO services','services.html#service-seo'],
+    marketing:['04 / MARKETING STRATEGY','Turn attention into a plan.','Focused audiences, purposeful content, and a customer journey that connects your channels to your business goals.','Explore marketing strategy','services.html#service-marketing']
+  };
+  let transition;
+  choices.forEach(button=>button.addEventListener('click',()=>{
+    if(button.getAttribute('aria-pressed')==='true')return;
+    const item=data[button.dataset.studioFocus];
+    if(!item)return;
+    choices.forEach(choice=>choice.setAttribute('aria-pressed',String(choice===button)));
+    label.textContent=item[0];title.textContent=item[1];description.textContent=item[2];
+    link.replaceChildren(document.createTextNode(item[3]+' '));
+    const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='→';link.appendChild(arrow);
+    link.setAttribute('href',item[4]);
+    if(transition)transition.cancel();
+    if(!motion.matches && typeof preview.animate==='function'){
+      transition=preview.animate([{opacity:.65,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
+    }
+  }));
+  let observer;
+  const entrances=new Set();
+  function stopMotion(){
+    if(!motion.matches)return;
+    if(observer)observer.disconnect();
+    if(transition)transition.cancel();
+    entrances.forEach(animation=>animation.cancel());entrances.clear();
+  }
+  if(motion.addEventListener)motion.addEventListener('change',stopMotion);
+  if(!motion.matches && 'IntersectionObserver' in window){
+    observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        observer.unobserve(entry.target);
+        if(motion.matches||typeof entry.target.animate!=='function')return;
+        const animation=entry.target.animate([{opacity:.55,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:360,easing:'cubic-bezier(.2,.7,.2,1)'});
+        entrances.add(animation);
+        animation.onfinish=()=>entrances.delete(animation);
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.service-card,.ai-example,.outcome').forEach(card=>observer.observe(card));
+  }
+})();</script>
 </body>
 </html>
 

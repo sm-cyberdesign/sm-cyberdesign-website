@@ -194,6 +194,13 @@ shopify-cart::part(primary-button){background:var(--brand-green);color:#170e16}
 .quote-recap ul{font-size:0.9225rem}
 .blog-card p{font-size:0.9425rem}
 .blog-card .meta{font-size:0.7625rem}
+
+/* Give numbered service and process labels one additional size step. */
+.service-num{font-size:.775rem}
+.pkg-num{font-size:.845rem}
+.step span{font-size:.825rem}
+.consultation-steps span{font-size:.825rem}
+.studio-route span{font-size:.745rem}
 @media(max-width:1050px){.nav-links{gap:.8rem}.logo .brand-name{font-size:1.0125rem!important}.logo .brand-tagline{font-size:0.5825rem!important}.nav-cta{font-size:0.8625rem;padding:.65rem .8rem}.hero-grid{gap:1.5rem}}
 @media(max-width:800px){
   .nav-links{background:#161619;max-height:calc(100dvh - 76px);overflow-y:auto;gap:.25rem}
