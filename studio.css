@@ -73,6 +73,7 @@ h2{font-size:clamp(2rem,3.6vw,3.1rem)}
 .outcomes{background:#1c1c20;border-block:1px solid var(--line);padding:3.5rem 0}
 .outcomes .section-head p,.outcome p{color:var(--muted)}
 .outcome{padding:1.5rem}
+.outcomes .outcome > svg{color:var(--brand-green)}
 .step span{color:var(--brand-pink)}
 .step::before{background:var(--brand-pink)}
 .step p{font-size:0.9825rem}
