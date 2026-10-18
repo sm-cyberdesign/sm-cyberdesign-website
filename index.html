@@ -244,6 +244,27 @@
 @media(max-width:800px){.studio-panel.interactive-studio{display:block;padding:1.25rem}.interactive-studio h2{font-size:1.85rem}.studio-preview{min-height:166px}.interactive-studio .studio-panel-top{font-size:.68rem}}
 @media(prefers-reduced-motion:reduce){.studio-preview-link span,.service-action span,.hero-actions .btn span{transform:none!important}}
 </style>
+
+  <style id="security-progress-styles">
+    .security-progress{margin-top:1.6rem;padding:1.1rem 1.2rem;background:rgba(34,34,38,.65);border:1px solid var(--line);border-radius:16px}
+    .security-progress figcaption{display:flex;justify-content:space-between;align-items:center;gap:.7rem;margin-bottom:.65rem}
+    .security-progress-title{font-size:.85rem;font-weight:700;color:var(--text)}
+    .security-progress-note{font-size:.7rem;color:var(--muted)}
+    .security-progress svg{display:block;width:100%;height:auto;overflow:visible}
+    .security-track{stroke:rgba(185,184,192,.2);stroke-width:2}
+    .security-flow{stroke:var(--brand-pink);stroke-width:2;stroke-dasharray:400;stroke-dashoffset:0;animation:security-flow 4.8s ease-in-out 1}
+    .security-stage{animation:security-stage 1.6s ease-in-out 1}
+    .security-stage-build{animation-delay:1.6s}
+    .security-stage-verify{animation-delay:3.2s}
+    .security-scan{animation:security-scan 1.6s ease-in-out 1}
+    .security-progress .stage-label{font:600 15px "DM Sans",sans-serif;fill:var(--text)}
+    .security-progress .stage-detail{font:12px "DM Sans",sans-serif;fill:var(--muted)}
+    @keyframes security-flow{from{stroke-dashoffset:400}to{stroke-dashoffset:0}}
+    @keyframes security-stage{0%,100%{filter:none}50%{filter:drop-shadow(0 0 7px rgba(219,0,161,.65))}}
+    @keyframes security-scan{0%,100%{transform:translateY(0)}50%{transform:translateY(25px)}}
+    @media(max-width:520px){.security-progress{padding:1rem .65rem}.security-progress figcaption{align-items:flex-start;flex-direction:column;gap:.15rem}.security-progress .stage-detail{font-size:13px}}
+    @media(prefers-reduced-motion:reduce){.security-progress *{animation:none!important}}
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -284,6 +305,45 @@
                 <a href="https://github.com/sm-cyberdesign/cybersecurity-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
+
+            <figure class="security-progress">
+              <figcaption>
+                <span class="security-progress-title">Security, step by step</span>
+                <span class="security-progress-note">An illustration of the approach</span>
+              </figcaption>
+              <svg viewBox="0 0 600 152" role="img" aria-labelledby="security-progress-title security-progress-desc">
+                <title id="security-progress-title">Review, build, and verify</title>
+                <desc id="security-progress-desc">A browser with a magnifying glass, a shield around code, and a checklist illustrate considering risks, protective design, and checks before handoff. A pink line moves through the three steps.</desc>
+                <path class="security-track" d="M100 46H500" fill="none"/>
+                <path class="security-flow" d="M100 46H500" fill="none"/>
+                <g class="security-stage">
+                  <rect x="51" y="9" width="98" height="78" rx="15" fill="#222226" stroke="#49444d"/>
+                  <rect x="67" y="24" width="52" height="39" rx="5" fill="#161619" stroke="#bbb8c1" stroke-width="1.7"/>
+                  <path d="M67 34H119" stroke="#bbb8c1"/><circle cx="74" cy="29" r="1.6" fill="#db00a1"/><circle cx="80" cy="29" r="1.6" fill="#d6fb51"/>
+                  <path d="M74 41H103M74 48H95M74 55H91" stroke="#7e7884" stroke-width="2" stroke-linecap="round"/>
+                  <path class="security-scan" d="M72 36H112" stroke="#db00a1" stroke-width="2" opacity=".65"/>
+                  <circle cx="113" cy="58" r="12" fill="#222226" stroke="#d6fb51" stroke-width="2.2"/><path d="M122 67L132 77" stroke="#d6fb51" stroke-width="3" stroke-linecap="round"/>
+                </g>
+                <g class="security-stage security-stage-build">
+                  <rect x="251" y="9" width="98" height="78" rx="15" fill="#222226" stroke="#49444d"/>
+                  <path d="M300 21L324 30V47C324 62 313 72 300 77C287 72 276 62 276 47V30Z" fill="#161619" stroke="#db00a1" stroke-width="2"/>
+                  <path d="M291 41L284 48L291 55M309 41L316 48L309 55M303 38L297 58" fill="none" stroke="#efedf1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="security-stage security-stage-verify">
+                  <rect x="451" y="9" width="98" height="78" rx="15" fill="#222226" stroke="#49444d"/>
+                  <rect x="479" y="21" width="43" height="55" rx="5" fill="#161619" stroke="#bbb8c1" stroke-width="1.7"/>
+                  <rect x="489" y="18" width="22" height="8" rx="3" fill="#222226" stroke="#bbb8c1"/>
+                  <path d="M486 37L489 40L494 34M486 50L489 53L494 47M486 63L489 66L494 60" fill="none" stroke="#d6fb51" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M500 38H515M500 51H515M500 64H511" stroke="#7e7884" stroke-width="2" stroke-linecap="round"/>
+                </g>
+                <text class="stage-label" x="100" y="112" text-anchor="middle">01 / Review</text>
+                <text class="stage-label" x="300" y="112" text-anchor="middle">02 / Build</text>
+                <text class="stage-label" x="500" y="112" text-anchor="middle">03 / Verify</text>
+                <text class="stage-detail" x="100" y="134" text-anchor="middle">Consider risks</text>
+                <text class="stage-detail" x="300" y="134" text-anchor="middle">Design with care</text>
+                <text class="stage-detail" x="500" y="134" text-anchor="middle">Check &amp; document</text>
+              </svg>
+            </figure>
           </div>
           <aside class="studio-panel interactive-studio" aria-labelledby="studio-title">
             <div class="studio-panel-top"><span>SM / Independent studio</span><span>Explore your next step</span></div>
