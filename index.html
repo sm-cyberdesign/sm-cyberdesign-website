@@ -220,7 +220,12 @@
     @media(max-width:800px){.ai-example-grid{grid-template-columns:1fr}}
 
 </style>
-  <link rel="stylesheet" href="studio.css?v=20261011-interactions">
+  <link rel="stylesheet" href="studio.css?v=20261018-header">
+  <style>
+    /* Keep the introduction at the top beside the taller interactive card. */
+    .hero-grid{align-items:start}
+    @media(min-width:801px){.hero{padding-top:3rem}}
+  </style>
 <style>
 /* Small, purposeful interactions using the existing signature colors. */
 .interactive-studio .studio-hint{font-size:.9rem;line-height:1.6;margin:.6rem 0 1rem}
