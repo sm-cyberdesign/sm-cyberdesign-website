@@ -311,6 +311,24 @@
       .outcome-light-controls{display:none}
     }
   </style>
+
+  <style id="principle-panel-styles">
+    .about .principle-panel{
+      padding:1.8rem;gap:1.25rem;min-height:0;
+      background:radial-gradient(ellipse at 20% 0%,rgba(219,0,161,.09),transparent 60%),#222226;
+      border:1px solid rgba(219,0,161,.3);
+      box-shadow:0 20px 55px rgba(0,0,0,.14);
+    }
+    .principle-kicker{display:flex;align-items:center;gap:.6rem;font-family:"Fira Code",monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .principle-kicker span{width:7px;height:7px;border-radius:50%;background:var(--brand-green);box-shadow:0 0 12px rgba(214,251,81,.3)}
+    .principle-illustration{display:block;width:100%;height:auto;max-height:155px}
+    .about .principle-panel blockquote{font-size:clamp(1.7rem,2.7vw,2.35rem);line-height:1.22}
+    .principle-panel blockquote em{color:var(--text);font-style:italic;text-decoration:underline;text-decoration-color:var(--brand-pink);text-decoration-thickness:2px;text-underline-offset:.16em}
+    .principle-values{display:flex;flex-wrap:wrap;gap:.4rem}
+    .principle-values span{border:1px solid var(--line);border-radius:999px;padding:.3rem .65rem;font-size:.74rem;color:var(--text);background:rgba(255,255,255,.025)}
+    .about .principle-panel small{font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--line);padding-top:.9rem}
+    @media(max-width:520px){.about .principle-panel{padding:1.3rem;gap:1rem}.principle-values span{font-size:.7rem}.principle-kicker{font-size:.63rem}}
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -478,7 +496,32 @@
 
     <section class="about" id="about">
       <div class="container about-grid">
-        <div class="about-panel"><blockquote>Good design should make people feel confident—not confused, excluded, or unsafe.</blockquote><small>SM CYBER DESIGN PRINCIPLE</small></div>
+        <div class="about-panel principle-panel">
+          <div class="principle-kicker"><span aria-hidden="true"></span>People at the center</div>
+          <svg class="principle-illustration" viewBox="0 0 400 156" role="img" aria-labelledby="principle-art-title">
+            <title id="principle-art-title">A person at the center of a clear, welcoming, protected digital experience</title>
+            <defs><radialGradient id="principle-halo"><stop stop-color="#db00a1" stop-opacity=".2"/><stop offset="1" stop-color="#db00a1" stop-opacity="0"/></radialGradient></defs>
+            <ellipse cx="200" cy="83" rx="160" ry="75" fill="url(#principle-halo)"/>
+            <rect x="99" y="14" width="202" height="128" rx="16" fill="#1a191e" stroke="#55505a"/>
+            <path d="M100 42H300" stroke="#45414a"/>
+            <circle cx="114" cy="28" r="3" fill="#db00a1"/><circle cx="125" cy="28" r="3" fill="#d6fb51"/><circle cx="136" cy="28" r="3" fill="#77717e"/>
+            <rect x="226" y="24" width="58" height="7" rx="3.5" fill="#39353f"/>
+            <circle cx="164" cy="84" r="28" fill="#2b2330" stroke="#db00a1" stroke-opacity=".5"/>
+            <circle cx="164" cy="76" r="9" fill="none" stroke="#efedf1" stroke-width="2"/>
+            <path d="M148 98C149 83 179 83 180 98" fill="none" stroke="#efedf1" stroke-width="2" stroke-linecap="round"/>
+            <path d="M208 69H271M208 81H258" stroke="#aaa4b2" stroke-width="5" stroke-linecap="round"/>
+            <rect x="205" y="96" width="59" height="17" rx="8.5" fill="#d6fb51"/>
+            <path d="M226 104H242M238 100L242 104L238 108" fill="none" stroke="#222226" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M64 76H98M302 77H331" stroke="#db00a1" stroke-opacity=".65" stroke-width="1.5" stroke-dasharray="3 5"/>
+            <g><circle cx="48" cy="76" r="22" fill="#252329" stroke="#6a515f"/><path d="M38 76L45 83L58 69" fill="none" stroke="#d6fb51" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g><rect x="330" y="53" width="46" height="48" rx="13" fill="#252329" stroke="#6a515f"/><path d="M353 62L366 67V77C366 87 353 93 353 93S340 87 340 77V67Z" fill="none" stroke="#d6fb51" stroke-width="1.8"/><path d="M347 77L351 81L359 72" fill="none" stroke="#efedf1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </svg>
+          <blockquote>Good design should make people feel <em>confident</em>—not confused, excluded, or unsafe.</blockquote>
+          <div class="principle-values" aria-label="Design principles">
+            <span>Clear to use</span><span>Welcoming to all</span><span>Security-aware</span>
+          </div>
+          <small>SM CYBER DESIGN PRINCIPLE</small>
+        </div>
         <div class="about-copy"><p class="eyebrow">About SM Cyber Design</p><h2>A person behind every decision.</h2><p>I’m Shima Mudakha, founder of SM Cyber Design. I bring together UX design, cybersecurity awareness, and an MBA in marketing to help businesses turn complex ideas into clear digital experiences.</p><p>Based in Atlanta and working remotely, I collaborate directly with you on your brand, website, or product concept.</p><p><strong>Professional memberships:</strong> ISC2 Tampa Bay Chapter and OWASP.</p><a class="btn btn-secondary" href="https://shimamudakha.design/" target="_blank" rel="noopener noreferrer">See Shima's selected work</a></div>
       </div>
     </section>
