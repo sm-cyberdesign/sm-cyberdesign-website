@@ -7,7 +7,7 @@ nav[aria-label="Main navigation"]{background:rgba(22,22,25,.96);border-color:var
 .nav-inner{gap:1rem}
 .logo .brand-name{color:var(--text)!important;font-family:"DM Sans",Arial,sans-serif;font-size:1.08rem!important;font-weight:700!important;letter-spacing:.03em;text-transform:uppercase}
 .logo .brand-tagline{color:var(--lime)!important;font-style:normal;font-size:0.6525rem!important;letter-spacing:.13em;text-transform:uppercase}
-.logo-mark{width:40px;height:40px;border:1px solid var(--line)}
+.logo-mark{width:44px;height:44px;border:1px solid var(--line)}
 .nav-links{gap:1.2rem}
 .nav-links a{color:var(--muted);min-height:44px;display:inline-flex;align-items:center}
 .nav-links a:hover,.nav-links a[aria-current]{color:var(--lime)}
@@ -216,7 +216,7 @@ shopify-cart::part(primary-button){background:var(--brand-green);color:#170e16}
   .print-note{align-items:flex-start;flex-direction:column;gap:.2rem}
 }
 @media(max-width:520px){
-  .logo .brand-name{font-size:1.0125rem!important}.logo .brand-tagline{font-size:0.5625rem!important}.logo-mark{width:36px;height:36px}
+  .logo .brand-name{font-size:1.0125rem!important}.logo .brand-tagline{font-size:0.5625rem!important}.logo-mark{width:40px;height:40px}
   section,.ai-workflow,.consultation{padding:3rem 0}.service-grid{grid-template-columns:1fr}
   .hero-actions .btn{width:100%}.hero-actions .btn-secondary{min-height:44px}
   .service-card{padding:1.4rem}.service-card h3{font-size:1.6rem}.service-num{margin-bottom:.8rem}
