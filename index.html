@@ -278,6 +278,39 @@
       .hero .credential-highlight{margin-top:1rem}
     }
   </style>
+
+  <style id="outcome-neon-styles">
+    @property --outcome-angle {
+      syntax:"<angle>";
+      initial-value:0deg;
+      inherits:false;
+    }
+    .outcomes .outcome {
+      --outcome-angle:0deg;
+      border:2px solid transparent;
+      background:
+        linear-gradient(var(--surface),var(--surface)) padding-box,
+        conic-gradient(from var(--outcome-angle),
+          rgba(185,184,192,.18) 0deg 225deg,
+          rgba(219,0,161,.5) 255deg,
+          #db00a1 280deg,
+          #d6fb51 305deg,
+          rgba(185,184,192,.18) 335deg 360deg) border-box;
+      box-shadow:0 0 14px rgba(219,0,161,.09);
+      animation:outcome-neon-orbit 7s linear infinite;
+    }
+    .outcomes .outcome:nth-child(2){animation-delay:-2.3s}
+    .outcomes .outcome:nth-child(3){animation-delay:-4.6s}
+    @keyframes outcome-neon-orbit{to{--outcome-angle:360deg}}
+    .outcome-light-controls{display:flex;justify-content:flex-end;margin:-.7rem 0 .8rem}
+    .outcome-light-toggle{background:transparent;border:1px solid var(--line);border-radius:999px;padding:.35rem .8rem;min-height:36px;color:var(--muted);font-size:.75rem;cursor:pointer}
+    .outcome-light-toggle:hover{color:var(--text);border-color:var(--brand-pink)}
+    .outcomes.lights-paused .outcome{animation-play-state:paused}
+    @media(prefers-reduced-motion:reduce){
+      .outcomes .outcome{animation:none}
+      .outcome-light-controls{display:none}
+    }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -422,6 +455,7 @@
     <section class="outcomes">
       <div class="container">
         <div class="section-head"><div><p class="eyebrow">Why SM Cyber Design</p><h2>Thoughtful by design.</h2></div><p>Clear language, accessible interactions, and security awareness guide the work from the first idea to delivery.</p></div>
+        <div class="outcome-light-controls"><button type="button" class="outcome-light-toggle" id="outcome-light-toggle" aria-pressed="false">Pause border lights</button></div>
         <div class="outcome-grid">
           <article class="outcome"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z" stroke="currentColor" stroke-width="1.8"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8"/></svg><h3>Trust built into the experience</h3><p>Clear information, thoughtful interactions, and security-minded choices help customers feel confident engaging with your business.</p></article>
           <article class="outcome"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2" stroke="currentColor" stroke-width="1.8"/></svg><h3>Clarity that supports growth</h3><p>Focused messaging and intentional structure guide visitors toward the next step while giving your business room to evolve.</p></article>
@@ -646,6 +680,19 @@
     document.querySelectorAll('.service-card,.ai-example,.outcome').forEach(card=>observer.observe(card));
   }
 })();</script>
+
+  <script>
+    (() => {
+      const section = document.querySelector('.outcomes');
+      const toggle = document.getElementById('outcome-light-toggle');
+      if (!section || !toggle) return;
+      toggle.addEventListener('click', () => {
+        const paused = section.classList.toggle('lights-paused');
+        toggle.setAttribute('aria-pressed', String(paused));
+        toggle.textContent = paused ? 'Resume border lights' : 'Pause border lights';
+      });
+    })();
+  </script>
 </body>
 </html>
 
