@@ -329,6 +329,45 @@
     .about .principle-panel small{font-size:.65rem;color:var(--muted);letter-spacing:.1em;border-top:1px solid var(--line);padding-top:.9rem}
     @media(max-width:520px){.about .principle-panel{padding:1.3rem;gap:1rem}.principle-values span{font-size:.7rem}.principle-kicker{font-size:.63rem}}
   </style>
+
+<style id="ai-demo-styles">
+.ai-workflow #ai-workflow-title{font-family:"DM Sans",sans-serif;font-size:clamp(2.6rem,5.8vw,4.8rem);font-weight:700;line-height:1.06;letter-spacing:-.045em}
+#ai-workflow-title>span{color:var(--brand-pink)}
+.ai-demo-intro{max-width:740px;color:var(--muted);font-size:1.08rem;margin:1.2rem 0 2rem;line-height:1.7}
+.ai-demo{display:grid;grid-template-columns:1fr 1.15fr;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface)}
+.ai-demo-controls{padding:2rem;background:radial-gradient(ellipse at 0% 0%,rgba(219,0,161,.09),transparent 65%)}
+.ai-demo-badge{display:inline-block;font-family:"Fira Code",monospace;font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1.1rem}
+.ai-demo-controls h3{font-size:2rem;margin-bottom:.7rem}
+.ai-demo-controls>p{color:var(--muted);font-size:.95rem;line-height:1.65}
+.ai-demo-steps{display:grid;gap:.65rem;margin-top:1.5rem}
+.ai-demo-steps button{display:flex;align-items:center;gap:1rem;text-align:left;padding:1rem;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--text);cursor:pointer;transition:background .2s,border-color .2s}
+.ai-demo-steps button>span{font-family:"Fira Code",monospace;font-size:.8rem;color:var(--muted)}
+.ai-demo-steps strong{font-size:.94rem;font-weight:600}
+.ai-demo-steps small{display:block;font-size:.78rem;color:var(--muted);font-weight:400;margin-top:.2rem}
+.ai-demo-steps button:hover{background:rgba(255,255,255,.035)}
+.ai-demo-steps button[aria-pressed="true"]{border-color:var(--brand-pink);background:rgba(219,0,161,.06);box-shadow:inset 3px 0 var(--brand-pink)}
+.ai-demo-steps button[aria-pressed="true"]>span{color:var(--brand-green)}
+.ai-demo-output{padding:2rem;background:#1b1b1f;border-left:1px solid var(--line);display:flex;flex-direction:column}
+.ai-demo-output-top{display:flex;justify-content:space-between;align-items:center;font-family:"Fira Code",monospace;font-size:.7rem;letter-spacing:.08em;color:var(--muted);margin-bottom:1.2rem}
+.ai-demo-indicator{height:7px;width:7px;border-radius:50%;background:var(--brand-pink);box-shadow:0 0 12px rgba(219,0,161,.4)}
+.ai-demo-output h3{font-size:1.65rem;line-height:1.2;margin-bottom:.8rem}
+.ai-demo-output>p{color:var(--muted);font-size:.92rem;line-height:1.65}
+.ai-demo-preview{border:1px solid var(--line);background:#242329;border-radius:12px;padding:1.1rem;margin:1.1rem 0;min-height:232px}
+.ai-demo-preview-label{display:block;font-size:.7rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.ai-demo-field{padding:.45rem .7rem;border:1px solid #514b57;border-radius:6px;font-size:.8rem;color:#d4d0d8;margin-bottom:.5rem}
+.ai-demo-sample-button{display:inline-block;padding:.4rem .85rem;border-radius:6px;background:#37333d;color:var(--text);font-size:.8rem}
+.ai-demo-sample-button.refined{background:var(--brand-green);color:#170e16}
+.ai-demo-review{list-style:none;display:grid;gap:.6rem;font-size:.86rem;color:var(--text)}
+.ai-demo-review li{border-left:2px solid var(--brand-pink);padding-left:.7rem}
+.ai-demo-review strong{display:block;font-size:.8rem;color:var(--brand-green)}
+.ai-demo-preview .ai-demo-help{font-size:.73rem;color:var(--muted);line-height:1.5;margin:.5rem 0}
+.ai-demo-next{align-self:flex-start;margin-top:auto;font-size:.86rem}
+.ai-demo-footer{display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-top:1.3rem}
+.ai-demo-footer p{color:var(--muted);font-size:.82rem;max-width:620px;line-height:1.7}
+.ai-demo-footer .btn{flex-shrink:0;font-size:.84rem}
+@media(max-width:800px){.ai-demo{grid-template-columns:1fr}.ai-demo-output{border-left:0;border-top:1px solid var(--line)}.ai-demo-controls,.ai-demo-output{padding:1.3rem}.ai-demo-footer{align-items:flex-start;flex-direction:column;gap:1rem}}
+@media(prefers-reduced-motion:reduce){.ai-demo *{transition:none!important}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -529,18 +568,32 @@
 
     <section class="ai-workflow" id="ai-workflow" aria-labelledby="ai-workflow-title">
       <div class="container">
-        <p class="eyebrow">How I Use AI</p>
-        <h2 id="ai-workflow-title">AI-assisted. Human-reviewed.</h2>
-        <div class="ai-intro">
-          <p>At SM Cyber Design, I combine generative AI with UX design, cybersecurity awareness, and marketing insight to support website development, application prototyping, content development, and workflow improvement.</p>
-          <p>I use AI to organize research and explore solutions, then review and refine the results around each project's business goals, accessibility needs, and user experience.</p>
+        <p class="eyebrow">AI-assisted. Human-reviewed.</p>
+        <h2 id="ai-workflow-title">How do I use <span>AI?</span></h2>
+        <p class="ai-demo-intro">From a first idea to a clearer experience. Explore how AI supports the draft—and how human judgment shapes what comes next.</p>
+        <div class="ai-demo" aria-label="Interactive AI workflow example">
+          <div class="ai-demo-controls">
+            <span class="ai-demo-badge">Illustrative walkthrough</span>
+            <h3>A better contact form.</h3>
+            <p>The brief: make it easier for a visitor to ask about a project.</p>
+            <div class="ai-demo-steps" role="group" aria-label="Explore workflow stages">
+              <button type="button" data-ai-stage="0" aria-pressed="true" aria-controls="ai-demo-output"><span>01</span><strong>Explore with AI<small>Generate a starting point</small></strong></button>
+              <button type="button" data-ai-stage="1" aria-pressed="false" aria-controls="ai-demo-output"><span>02</span><strong>Apply human judgment<small>Question, check, and refine</small></strong></button>
+              <button type="button" data-ai-stage="2" aria-pressed="false" aria-controls="ai-demo-output"><span>03</span><strong>Improve the experience<small>Turn feedback into design</small></strong></button>
+            </div>
+          </div>
+          <div class="ai-demo-output" id="ai-demo-output" aria-live="polite" aria-atomic="true">
+            <div class="ai-demo-output-top"><span id="ai-demo-stage-label">01 / AI DRAFT</span><span class="ai-demo-indicator" aria-hidden="true"></span></div>
+            <h3 id="ai-demo-output-title">A starting point, ready for review.</h3>
+            <p id="ai-demo-output-note">AI can suggest a form structure and initial copy. This example starts with more information than a first inquiry may need.</p>
+            <div class="ai-demo-preview" id="ai-demo-preview"><span class="ai-demo-preview-label">Example draft</span><div class="ai-demo-field">Full name</div><div class="ai-demo-field">Email address</div><div class="ai-demo-field">Phone number · Company · Budget</div><span class="ai-demo-sample-button">Submit</span></div>
+            <button class="btn btn-primary ai-demo-next" id="ai-demo-next" type="button">See the human review <span aria-hidden="true">→</span></button>
+          </div>
         </div>
-        <div class="ai-example-grid">
-          <article class="ai-example"><h3>Research &amp; Content</h3><p>Research synthesis and AI-assisted content development help clarify information, explore messaging, and organize a project's direction.</p></article>
-          <article class="ai-example"><h3>Design &amp; Prototyping</h3><p>Rapid prototyping and AI-assisted development support exploration of website layouts, application flows, and interface concepts.</p></article>
-          <article class="ai-example"><h3>Human Review &amp; Validation</h3><p>I review and refine AI-generated work for accuracy, usability, accessibility needs, and alignment with the project requirements.</p></article>
+        <div class="ai-demo-footer">
+          <p>AI helps me explore. I review for clarity, accuracy, accessibility, privacy, and project fit. This is a sample walkthrough, not a live AI tool.</p>
+          <a class="btn btn-secondary ai-project-link" href="https://shimamudakha.design/#applied-ai">Explore my AI projects <span aria-hidden="true">↗</span></a>
         </div>
-        <a class="btn btn-secondary ai-project-link" href="https://shimamudakha.design/#applied-ai">Explore my applied AI projects <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -736,6 +789,32 @@
       });
     })();
   </script>
+
+<script>
+(() => {
+  const root=document.getElementById('ai-workflow');
+  if(!root)return;
+  const buttons=[...root.querySelectorAll('[data-ai-stage]')];
+  const next=root.querySelector('#ai-demo-next');
+  const stages=[
+    {label:'01 / AI DRAFT',title:'A starting point, ready for review.',note:'AI can suggest a form structure and initial copy. This example starts with more information than a first inquiry may need.',preview:'<span class="ai-demo-preview-label">Example draft</span><div class="ai-demo-field">Full name</div><div class="ai-demo-field">Email address</div><div class="ai-demo-field">Phone number · Company · Budget</div><span class="ai-demo-sample-button">Submit</span>',next:'See the human review'},
+    {label:'02 / HUMAN REVIEW',title:'Ask better questions before publishing.',note:'The review looks beyond appearance: what does a visitor need, what information is necessary, and what should be checked?',preview:'<span class="ai-demo-preview-label">Review notes</span><ul class="ai-demo-review"><li><strong>Privacy</strong>Do we need a phone number at first contact?</li><li><strong>Accessibility</strong>Use persistent labels and check keyboard access.</li><li><strong>Clarity</strong>Explain what happens after sending.</li><li><strong>Validation</strong>Check errors and the form’s actual delivery.</li></ul>',next:'See the refined concept'},
+    {label:'03 / REFINED CONCEPT',title:'Less friction. A clearer next step.',note:'The concept asks for essential contact details, explains the action, and leaves space for the project’s needs. Implementation still needs testing.',preview:'<span class="ai-demo-preview-label">Refined form concept</span><div class="ai-demo-field">Your name</div><div class="ai-demo-field">Email for my reply</div><div class="ai-demo-field">What would you like help with?</div><span class="ai-demo-sample-button refined">Send project inquiry →</span><p class="ai-demo-help">I’ll review your inquiry and reply by email.</p>',next:'Replay the walkthrough'}
+  ];
+  let current=0;
+  function show(i){
+    current=i;const s=stages[i];
+    buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
+    root.querySelector('#ai-demo-stage-label').textContent=s.label;
+    root.querySelector('#ai-demo-output-title').textContent=s.title;
+    root.querySelector('#ai-demo-output-note').textContent=s.note;
+    root.querySelector('#ai-demo-preview').innerHTML=s.preview;
+    next.replaceChildren(document.createTextNode(s.next+' →'));
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.aiStage))));
+  next.addEventListener('click',()=>show((current+1)%stages.length));
+})();
+</script>
 </body>
 </html>
 
