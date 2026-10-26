@@ -96,6 +96,10 @@
 <style>
 .article-layout{display:grid;grid-template-columns:minmax(0,720px) minmax(250px,340px);gap:3rem;align-items:start;padding:1rem 0 3rem}.article-layout .article-body{width:100%;padding:0;max-width:none}.article-poster{position:sticky;top:100px;margin:1.8rem 0 0}.article-poster img{display:block;width:100%;height:auto;border-radius:18px}.article-poster figcaption{font-size:.82rem;color:var(--muted);margin-top:.8rem}.article-body a{text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--vivid)}@media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:1rem}.article-poster{position:static;grid-row:1;max-width:520px;margin:1rem auto}.article-body{min-width:0}}
 </style>
+<style>
+/* Large featured artwork, followed by a readable article column. */
+.article-layout{display:flex;flex-direction:column;align-items:center;gap:1.5rem;padding:1rem 0 3rem}.article-layout .article-poster{position:static;order:-1;width:100%;max-width:820px;margin:0 auto 1rem}.article-layout .article-body{width:100%;max-width:720px;padding:0}.article-poster img{width:100%;height:auto}.article-poster figcaption{text-align:center}@media(max-width:600px){.article-layout{gap:.5rem}.article-layout .article-poster{margin-bottom:1rem}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>

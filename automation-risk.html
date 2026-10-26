@@ -12,11 +12,11 @@
   <meta property="og:title" content="The Risk Hiding Inside Automation: What Gets Traded Away for Speed">
   <meta property="og:description" content="Every automated workflow is also a shortcut around the human judgment that used to catch mistakes before they scaled.">
   <meta property="og:url" content="https://smcyberdesign.com/automation-risk.html">
-  <meta property="og:image" content="https://smcyberdesign.com/og-image.png">
+  <meta property="og:image" content="https://smcyberdesign.com/assets/automation-risk-poster.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Risk Hiding Inside Automation: What Gets Traded Away for Speed">
   <meta name="twitter:description" content="Every automated workflow is also a shortcut around the human judgment that used to catch mistakes before they scaled.">
-  <meta name="twitter:image" content="https://smcyberdesign.com/og-image.png">
+  <meta name="twitter:image" content="https://smcyberdesign.com/assets/automation-risk-poster.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
@@ -93,6 +93,13 @@
 
   </style>
   <link rel="stylesheet" href="studio.css?v=20261010-gray">
+<style>
+.article-layout{display:grid;grid-template-columns:minmax(0,720px) minmax(250px,340px);gap:3rem;align-items:start;padding:1rem 0 3rem}.article-layout .article-body{width:100%;padding:0;max-width:none}.article-poster{position:sticky;top:100px;margin:1.8rem 0 0}.article-poster img{display:block;width:100%;height:auto;border-radius:18px}.article-poster figcaption{font-size:.82rem;color:var(--muted);margin-top:.8rem}@media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:1rem}.article-poster{position:static;grid-row:1;max-width:520px;margin:1rem auto}.article-body{min-width:0}}
+</style>
+<style>
+/* Large featured artwork, followed by a readable article column. */
+.article-layout{display:flex;flex-direction:column;align-items:center;gap:1.5rem;padding:1rem 0 3rem}.article-layout .article-poster{position:static;order:-1;width:100%;max-width:820px;margin:0 auto 1rem}.article-layout .article-body{width:100%;max-width:720px;padding:0}.article-poster img{width:100%;height:auto}.article-poster figcaption{text-align:center}@media(max-width:600px){.article-layout{gap:.5rem}.article-layout .article-poster{margin-bottom:1rem}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +129,7 @@
       </div>
     </header>
 
-    <section class="container article-body">
+    <div class="container article-layout"><article class="article-body" aria-label="Article">
 <h2>Why automation is a security topic, not just an efficiency one</h2>
 <p>Automation replaces a human decision point with a fixed rule. That's great right up until an input arrives that the rule didn't anticipate — at which point the automation keeps going anyway, at machine speed, without the pause a person would have had.</p>
 <h2>Common failure patterns</h2>
@@ -132,7 +139,7 @@
 <h2>Reducing the risk</h2>
 <p>Give each automation its own scoped, named identity — never a shared human login. Add a human checkpoint at the specific steps with the highest blast radius, even if the rest stays automated. Monitor automation activity the way you'd monitor a privileged user, because functionally it is one. And review its permissions on a schedule, not only at the moment it was first set up.</p>
 <div class="callout">Automation doesn't remove risk — it moves the decision point earlier and speeds up whatever mistake was already sitting in the process.</div>
-    </section>
+    </article><figure class="article-poster"><img src="assets/automation-risk-poster.svg" width="1200" height="1200" alt="Make permissions, ownership, and stop points explicit."><figcaption>Make permissions, ownership, and stop points explicit.</figcaption></figure></div>
 
     <section class="container share-bar" aria-label="Share this article">
       <span>Share this</span>

@@ -12,11 +12,11 @@
   <meta property="og:title" content="Server-Side Template Injection: Why Jinja and Friends Are Riskier Than They Look">
   <meta property="og:description" content="Template engines are built to be powerful. That's exactly what makes injection into them dangerous.">
   <meta property="og:url" content="https://smcyberdesign.com/jinja-template-injection.html">
-  <meta property="og:image" content="https://smcyberdesign.com/og-image.png">
+  <meta property="og:image" content="https://smcyberdesign.com/assets/jinja-template-injection-poster.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Server-Side Template Injection: Why Jinja and Friends Are Riskier Than They Look">
   <meta name="twitter:description" content="Template engines are built to be powerful. That's exactly what makes injection into them dangerous.">
-  <meta name="twitter:image" content="https://smcyberdesign.com/og-image.png">
+  <meta name="twitter:image" content="https://smcyberdesign.com/assets/jinja-template-injection-poster.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
@@ -93,6 +93,13 @@
 
   </style>
   <link rel="stylesheet" href="studio.css?v=20261010-gray">
+<style>
+.article-layout{display:grid;grid-template-columns:minmax(0,720px) minmax(250px,340px);gap:3rem;align-items:start;padding:1rem 0 3rem}.article-layout .article-body{width:100%;padding:0;max-width:none}.article-poster{position:sticky;top:100px;margin:1.8rem 0 0}.article-poster img{display:block;width:100%;height:auto;border-radius:18px}.article-poster figcaption{font-size:.82rem;color:var(--muted);margin-top:.8rem}@media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:1rem}.article-poster{position:static;grid-row:1;max-width:520px;margin:1rem auto}.article-body{min-width:0}}
+</style>
+<style>
+/* Large featured artwork, followed by a readable article column. */
+.article-layout{display:flex;flex-direction:column;align-items:center;gap:1.5rem;padding:1rem 0 3rem}.article-layout .article-poster{position:static;order:-1;width:100%;max-width:820px;margin:0 auto 1rem}.article-layout .article-body{width:100%;max-width:720px;padding:0}.article-poster img{width:100%;height:auto}.article-poster figcaption{text-align:center}@media(max-width:600px){.article-layout{gap:.5rem}.article-layout .article-poster{margin-bottom:1rem}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +129,7 @@
       </div>
     </header>
 
-    <section class="container article-body">
+    <div class="container article-layout"><article class="article-body" aria-label="Article">
 <h2>What SSTI is, conceptually</h2>
 <p>Server-side template injection happens when user input is passed into a template string that the engine actually renders, rather than only inserted as a data value inside a fixed template. Once that happens, the template engine's own expression syntax — attribute access, method calls, filters — becomes something an attacker can reach and steer.</p>
 <h2>Why Jinja-style engines are a common target</h2>
@@ -134,7 +141,7 @@
 <h2>Defense</h2>
 <p>The core rule: never render user input as a template. Only pass it into a template as a data variable inside a fixed, developer-authored template. If your engine offers a sandboxed environment, use it and understand its actual limits — sandboxes have had bypasses before. Keep the template rendering context free of powerful objects like file or subprocess access. Keep the templating library patched, and make 'is this ever compiled as a template' an explicit code review question.</p>
 <div class="callout">The review question isn't 'did we sanitize this input' — it's 'is this input ever compiled as a template at all.'</div>
-    </section>
+    </article><figure class="article-poster"><img src="assets/jinja-template-injection-poster.svg" width="1200" height="1200" alt="Untrusted input must never become template source."><figcaption>Untrusted input must never become template source.</figcaption></figure></div>
 
     <section class="container share-bar" aria-label="Share this article">
       <span>Share this</span>

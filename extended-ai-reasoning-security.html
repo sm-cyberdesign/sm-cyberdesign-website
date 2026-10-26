@@ -12,11 +12,11 @@
   <meta property="og:title" content="Extended Reasoning in AI Models: What 'Higher Reasoning' Means for Security">
   <meta property="og:description" content="Newer AI models can spend more computation 'thinking' before they answer. Here's what that changes for security work — and its risks.">
   <meta property="og:url" content="https://smcyberdesign.com/extended-ai-reasoning-security.html">
-  <meta property="og:image" content="https://smcyberdesign.com/og-image.png">
+  <meta property="og:image" content="https://smcyberdesign.com/assets/extended-ai-reasoning-security-poster.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Extended Reasoning in AI Models: What 'Higher Reasoning' Means for Security">
   <meta name="twitter:description" content="Newer AI models can spend more computation 'thinking' before they answer. Here's what that changes for security work — and its risks.">
-  <meta name="twitter:image" content="https://smcyberdesign.com/og-image.png">
+  <meta name="twitter:image" content="https://smcyberdesign.com/assets/extended-ai-reasoning-security-poster.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
@@ -93,6 +93,13 @@
 
   </style>
   <link rel="stylesheet" href="studio.css?v=20261010-gray">
+<style>
+.article-layout{display:grid;grid-template-columns:minmax(0,720px) minmax(250px,340px);gap:3rem;align-items:start;padding:1rem 0 3rem}.article-layout .article-body{width:100%;padding:0;max-width:none}.article-poster{position:sticky;top:100px;margin:1.8rem 0 0}.article-poster img{display:block;width:100%;height:auto;border-radius:18px}.article-poster figcaption{font-size:.82rem;color:var(--muted);margin-top:.8rem}@media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:1rem}.article-poster{position:static;grid-row:1;max-width:520px;margin:1rem auto}.article-body{min-width:0}}
+</style>
+<style>
+/* Large featured artwork, followed by a readable article column. */
+.article-layout{display:flex;flex-direction:column;align-items:center;gap:1.5rem;padding:1rem 0 3rem}.article-layout .article-poster{position:static;order:-1;width:100%;max-width:820px;margin:0 auto 1rem}.article-layout .article-body{width:100%;max-width:720px;padding:0}.article-poster img{width:100%;height:auto}.article-poster figcaption{text-align:center}@media(max-width:600px){.article-layout{gap:.5rem}.article-layout .article-poster{margin-bottom:1rem}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +129,7 @@
       </div>
     </header>
 
-    <section class="container article-body">
+    <div class="container article-layout"><article class="article-body" aria-label="Article">
 <h2>What extended or 'high reasoning' modes are</h2>
 <p>Some newer AI models can be set to spend more computation working through a problem step by step before producing an answer, rather than responding in one pass. This tends to improve performance on multi-step problems — the kind of reasoning that involves tracing a chain of cause and effect rather than recalling a fact.</p>
 <h2>Why it's relevant to security work</h2>
@@ -132,7 +139,7 @@
 <h2>Practical guidance</h2>
 <p>Treat AI-assisted reasoning as a lead to verify, not a conclusion to act on — especially for anything touching production systems. Don't paste real credentials, customer data, or unredacted logs into a general-purpose AI tool. If you're using AI for security triage regularly, use a tool whose data-handling and retention terms you've actually read, and prefer one that doesn't train on your inputs by default.</p>
 <div class="callout">More reasoning steps make a model more capable, not more correct. Extended reasoning is worth using for triage and drafting — verify what it concludes before you act on it.</div>
-    </section>
+    </article><figure class="article-poster"><img src="assets/extended-ai-reasoning-security-poster.svg" width="1200" height="1200" alt="Treat the answer as a lead. Check it before acting."><figcaption>Treat the answer as a lead. Check it before acting.</figcaption></figure></div>
 
     <section class="container share-bar" aria-label="Share this article">
       <span>Share this</span>
