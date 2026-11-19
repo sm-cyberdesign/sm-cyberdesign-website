@@ -1,0 +1,13 @@
+/* Calm 12-second hero protection loop. Motion only changes glow and light, never layout. */
+.sm-hero-protection{width:min(100%,610px);margin:1.4rem 0 1.8rem;aspect-ratio:1168/784;position:relative;overflow:hidden;border-radius:20px;background:#0b0e10;isolation:isolate;box-shadow:0 15px 42px rgba(13,13,18,.18)}
+.sm-hero-protection svg{width:100%;height:100%;display:block}
+.sm-hero-protection .sm-shield-glow{transform-origin:50% 50%;animation:sm-hero-breathe 12s ease-in-out infinite}
+.sm-hero-protection .sm-edge-highlight{stroke-dasharray:140 950;stroke-dashoffset:0;animation:sm-hero-trace 12s ease-in-out infinite}
+.sm-hero-protection .sm-dashboard-wave{stroke-dasharray:6 12;animation:sm-hero-wave 12s linear infinite}
+.sm-hero-protection .sm-neon-soft{animation:sm-hero-neon 12s ease-in-out infinite}
+@keyframes sm-hero-breathe{0%,100%{opacity:.42}25%{opacity:.57}48%{opacity:.66}67%,88%{opacity:.46}}
+@keyframes sm-hero-trace{0%{stroke-dashoffset:0;opacity:.12}18%{opacity:.8}52%{stroke-dashoffset:-430;opacity:.7}72%,100%{stroke-dashoffset:-650;opacity:.08}}
+@keyframes sm-hero-wave{to{stroke-dashoffset:-72}}
+@keyframes sm-hero-neon{0%,100%{opacity:.42}35%{opacity:.65}65%,88%{opacity:.43}}
+@media(prefers-reduced-motion:reduce){.sm-hero-protection *{animation:none!important}.sm-hero-protection .sm-edge-highlight{opacity:0!important}}
+@media(max-width:600px){.sm-hero-protection{border-radius:14px;margin:1rem 0 1.4rem}}
