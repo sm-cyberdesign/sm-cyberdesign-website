@@ -1,0 +1,10 @@
+/* Security, step by step — gentle continuous 12-second loop */
+.security-progress .security-flow{stroke-dasharray:10 18;stroke-dashoffset:0;animation:sm-step-flow 12s linear infinite}
+.security-progress .security-stage{transform-box:fill-box;transform-origin:center;animation:sm-step-glow 12s ease-in-out infinite}
+.security-progress .security-stage-build{animation-delay:4s}
+.security-progress .security-stage-verify{animation-delay:8s}
+.security-progress .security-scan{animation:sm-step-scan 12s ease-in-out infinite}
+@keyframes sm-step-flow{to{stroke-dashoffset:-168}}
+@keyframes sm-step-glow{0%,9%,35%,100%{filter:drop-shadow(0 0 0 transparent);opacity:.92}16%,25%{filter:drop-shadow(0 0 5px rgba(214,251,81,.55));opacity:1}}
+@keyframes sm-step-scan{0%,7%,30%,100%{transform:translateY(0);opacity:.35}15%{transform:translateY(18px);opacity:.9}24%{transform:translateY(0);opacity:.4}}
+@media(prefers-reduced-motion:reduce){.security-progress .security-flow,.security-progress .security-stage,.security-progress .security-scan{animation:none!important}}
