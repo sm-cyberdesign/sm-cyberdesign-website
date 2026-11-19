@@ -357,6 +357,7 @@
 @media(max-width:800px){.ai-demo{grid-template-columns:1fr}.ai-demo-output{border-left:0;border-top:1px solid var(--line)}.ai-demo-controls,.ai-demo-output{padding:1.3rem}.ai-demo-footer{align-items:flex-start;flex-direction:column;gap:1rem}}
 @media(prefers-reduced-motion:reduce){.ai-demo *{transition:none!important}}
 </style>
+  <link rel="stylesheet" href="assets/sm-motion.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -817,6 +818,7 @@
   next.addEventListener('click',()=>show((current+1)%stages.length));
 })();
 </script>
+  <script defer src="assets/sm-motion.js"></script>
 </body>
 </html>
 
