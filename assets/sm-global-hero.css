@@ -1,0 +1,18 @@
+/* SM Cyber Design landing-page global network — illustrative, not live telemetry */
+.sm-global-hero{position:relative;margin:1.25rem 0 1.7rem;max-width:700px;overflow:hidden;border:1px solid rgba(100,226,146,.28);border-radius:18px;background:radial-gradient(circle at 50% 40%,#133022,#060d0b 75%);box-shadow:0 18px 48px rgba(0,0,0,.18)}
+.sm-global-hero svg{display:block;width:100%;height:auto}
+.sm-global-hero .orbit{fill:none;stroke:#80e89b;stroke-width:2;stroke-dasharray:9 18;animation:sm-global-flow 16s linear infinite}
+.sm-global-hero .attack{fill:none;stroke:#f083bd;stroke-width:2;stroke-dasharray:8 22;animation:sm-global-flow 16s linear infinite}
+.sm-global-hero .node{animation:sm-global-pulse 16s ease-in-out infinite}
+.sm-global-hero .node:nth-of-type(2){animation-delay:-4s}
+.sm-global-hero .node:nth-of-type(3){animation-delay:-8s}
+.sm-global-hero .halo{animation:sm-global-halo 16s ease-in-out infinite}
+.sm-global-hero .bar{transform-box:fill-box;transform-origin:bottom;animation:sm-global-bar 16s ease-in-out infinite}
+.sm-global-hero .bar:nth-of-type(2n){animation-delay:-4s}
+.sm-global-hero figcaption{position:absolute;bottom:8px;left:14px;color:#aac5b6;font:11px system-ui,sans-serif;letter-spacing:.03em}
+@keyframes sm-global-flow{to{stroke-dashoffset:-240}}
+@keyframes sm-global-pulse{0%,100%{opacity:.5}30%,60%{opacity:1}75%{opacity:.5}}
+@keyframes sm-global-halo{0%,100%{opacity:.2}35%{opacity:.45}70%,88%{opacity:.22}}
+@keyframes sm-global-bar{0%,100%{transform:scaleY(.72)}35%{transform:scaleY(1)}70%{transform:scaleY(.85)}}
+@media(prefers-reduced-motion:reduce){.sm-global-hero *{animation:none!important}}
+@media(max-width:600px){.sm-global-hero{border-radius:12px;margin:1rem 0}}
