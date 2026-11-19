@@ -1,0 +1,23 @@
+/* SM Cyber Design: subtle looping motion illustrations */
+.sm-motion-art{width:min(100%,620px);margin:1.5rem auto 2rem;display:block;overflow:visible;pointer-events:none}
+.sm-motion-art .sm-line{fill:none;stroke:#79d7aa;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.sm-motion-art .sm-pink{stroke:#ec91c1}
+.sm-motion-art .sm-frame{fill:rgba(21,42,36,.92);stroke:rgba(121,215,170,.48);stroke-width:2}
+.sm-motion-art .sm-label{fill:#eafaf0;font:600 16px "DM Sans",sans-serif}
+.sm-motion-art .sm-flow{stroke-dasharray:9 15;animation:sm-motion-dash 7s linear infinite}
+.sm-motion-art .sm-breathe{transform-box:fill-box;transform-origin:center;animation:sm-motion-breathe 5s ease-in-out infinite}
+.sm-motion-art .sm-draw{stroke-dasharray:260;stroke-dashoffset:260;animation:sm-motion-draw 7s ease-in-out infinite}
+.sm-motion-art .sm-reveal{animation:sm-motion-reveal 7s ease-in-out infinite}
+.sm-motion-art .sm-halo{transform-box:fill-box;transform-origin:center;animation:sm-motion-halo 6s ease-in-out infinite}
+.sm-motion-art .sm-dot{animation:sm-motion-dot 5s ease-in-out infinite}
+.sm-motion-art .sm-dot:nth-of-type(2){animation-delay:-1.6s}
+.sm-motion-art .sm-dot:nth-of-type(3){animation-delay:-3.2s}
+.sm-motion-art:not(.sm-motion-playing) *{animation-play-state:paused!important}
+@keyframes sm-motion-dash{to{stroke-dashoffset:-120}}
+@keyframes sm-motion-breathe{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes sm-motion-draw{0%,12%{stroke-dashoffset:260}43%,76%{stroke-dashoffset:0}100%{stroke-dashoffset:260}}
+@keyframes sm-motion-reveal{0%,25%,100%{opacity:.2}40%,80%{opacity:1}}
+@keyframes sm-motion-halo{0%,100%{opacity:.22;transform:scale(.97)}50%{opacity:.55;transform:scale(1.04)}}
+@keyframes sm-motion-dot{0%,100%{opacity:.2;transform:translateX(0)}50%{opacity:1;transform:translateX(34px)}}
+@media(prefers-reduced-motion:reduce){.sm-motion-art *{animation:none!important;transition:none!important}.sm-motion-art .sm-draw{stroke-dashoffset:0!important}.sm-motion-art .sm-reveal{opacity:1!important}}
+@media(max-width:600px){.sm-motion-art{margin:1rem auto 1.5rem;max-height:200px}}
